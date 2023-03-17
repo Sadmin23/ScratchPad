@@ -1,7 +1,12 @@
 import React, {useState} from "react";
-import AddIcon from '@mui/icons-material/Add';
 
 function CreateArea(props) {
+
+  const [expand, setExapand] = useState(true);
+
+  function updateForm(){
+    setExapand(false);
+  }
 
   const [InputText, SetInputText] = useState({
     title: "",
@@ -34,11 +39,19 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
-        <input onChange={handleData} name="title" value={InputText.title} placeholder="Title"/>
-        <textarea onChange={handleData} name="content" value={InputText.content} placeholder="Take a note..." rows="3" />
-        <button onClick={SubmitNote}>
-          <AddIcon/>
-        </button>
+        { expand ? 
+            <textarea onClick={updateForm} onChange={handleData} name="content" value={InputText.content} placeholder="Take a note..." rows="1" /> 
+          : 
+            <div>         
+              <input onChange={handleData} name="title" value={InputText.title} placeholder="Title"/>
+              <textarea onClick={updateForm} onChange={handleData} name="content" value={InputText.content} placeholder="Take a note..." rows="3" />
+              <button onClick={SubmitNote}>
+                +
+              </button>
+            </div>
+        }
+          
+
       </form>
     </div>
   );

@@ -11,7 +11,7 @@ function Note(props) {
           props.onDelete(props.id)
         }}
       >
-        <DeleteIcon/>
+        <DeleteIcon style={{opacity: 1.0}}/>
       </button>
     </div>
   );
