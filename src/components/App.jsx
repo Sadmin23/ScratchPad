@@ -11,13 +11,15 @@ function App() {
   function addItems(InputText){
     setNotes(prevValue=>{
       return [...prevValue, InputText];
-    })
+    });
   }
 
   return (
     <div>
       <Header />
-      <CreateArea />
+      <CreateArea 
+        onAdd={addItems}
+      />
       <Note key={1} title="Note title" content="Note content" />
       <Footer />
     </div>
