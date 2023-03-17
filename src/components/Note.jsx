@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
 
 function Note(props) {
   return (
@@ -11,7 +11,7 @@ function Note(props) {
           props.onDelete(props.id)
         }}
       >
-        <DeleteIcon style={{opacity: 1.0}}/>
+        <DeleteSharpIcon/>
       </button>
     </div>
   );

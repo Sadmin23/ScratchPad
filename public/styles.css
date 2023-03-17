@@ -9,6 +9,7 @@ html {
 body {
   background: #eee;
   padding: 0 16px;
+  background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");;
 }
 
 header {
@@ -33,7 +34,7 @@ footer {
 }
 
 footer p {
-  color: #ccc;
+  color: grey;
 }
 .note {
   background: #fff;
