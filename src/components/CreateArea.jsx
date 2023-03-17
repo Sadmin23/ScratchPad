@@ -18,17 +18,17 @@ function CreateArea(props) {
     });
   }
 
+  function SubmitNote(event){
+    props.onAdd(InputText);
+    event.preventDefault();
+  }
+
   return (
     <div>
       <form>
         <input onChange={handleData} name="title" value={InputText.title} placeholder="Title"/>
         <textarea onChange={handleData} name="content" value={InputText.content} placeholder="Take a note..." rows="3" />
-        <button 
-          onClick={()=>{
-            props.onAdd(InputText);
-            SetInputText("");
-          }}
-        >
+        <button onClick={SubmitNote}>
           Add
         </button>
       </form>
