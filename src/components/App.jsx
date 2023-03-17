@@ -6,12 +6,12 @@ import CreateArea from "./CreateArea";
 
 function App() {
 
-//  const [Notes, setNotes] = useState([]);
+ const [Notes, setNotes] = useState([]);
 
   function addItems(InputText){
-    // setNotes(prevValue=>{
-    //   return [...prevValue, InputText];
-    // });
+    setNotes(prevValue=>{
+      return [...prevValue, InputText];
+    });
 
     console.log(InputText);
   }
