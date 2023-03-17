@@ -30,8 +30,14 @@ function App() {
       <CreateArea 
         onAdd={addNotes}
       />
-      {Notes.map(note => (
-        <Note title={note.title} content={note.content} />
+      {Notes.map((note, index) => (
+        <Note 
+          key={index}
+          id={index}
+          title={note.title} 
+          content={note.content}
+          onDelete={deleteNotes}
+        />
       ))}
       <Footer />
     </div>
