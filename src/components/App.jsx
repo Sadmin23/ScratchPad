@@ -9,11 +9,11 @@ function App() {
  const [Notes, setNotes] = useState([]);
 
   function addNotes(InputText){
-    setNotes(prevValue=>{
-      return [...prevValue, InputText];
-    });
-
-    console.log(InputText);
+    if (InputText.title!=="" && InputText.content!==""){
+      setNotes(prevValue=>{
+        return [...prevValue, InputText];
+      });
+    }
   }
 
   function deleteNotes(id){

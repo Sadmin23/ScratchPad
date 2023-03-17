@@ -21,10 +21,13 @@ function CreateArea(props) {
   function SubmitNote(event){
     props.onAdd(InputText);
     event.preventDefault();
-    SetInputText({
-      title: "",
-      content: ""
-    });
+
+    if (InputText.title!=="" && InputText.content!==""){
+      SetInputText({
+        title: "",
+        content: ""
+      });
+    }
   }
 
   return (
