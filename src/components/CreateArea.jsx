@@ -8,22 +8,13 @@ function CreateArea() {
   });
 
   function handleData(event){
-    var name = event.target.name;
-    var value = event.target.value;
+    const { name, value } = event.target;
 
     SetInputText(prevValue => {
-      if (name==="title"){
         return {
-          title: value,
-          content: prevValue.content
+          ...prevValue,
+          [name]: value
         }
-      }
-      else if (name==="content"){
-        return {
-          title: prevValue.title,
-          content: value
-        }
-      }
     });
   }
 
