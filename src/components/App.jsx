@@ -8,7 +8,7 @@ function App() {
 
  const [Notes, setNotes] = useState([]);
 
-  function addItems(InputText){
+  function addNotes(InputText){
     setNotes(prevValue=>{
       return [...prevValue, InputText];
     });
@@ -16,11 +16,19 @@ function App() {
     console.log(InputText);
   }
 
+  function deleteNotes(id){
+    setNotes(prevValue => {
+      return Notes.filter((items, index)=>{
+        return index!==id;
+      });
+    })
+  }
+
   return (
     <div>
       <Header />
       <CreateArea 
-        onAdd={addItems}
+        onAdd={addNotes}
       />
       {Notes.map(note => (
         <Note title={note.title} content={note.content} />
